@@ -1,1 +1,1 @@
-web: gunicorn foodbank/foodbank/wsgi.py
+web: gunicorn foodbank/foodbank/wsgi:application
