@@ -12,7 +12,7 @@ def basic_auth(func):
     @wraps(func)
     def _decorator(request, *args, **kwargs):
         from django.contrib.auth import authenticate, login
-        if request.META.has_key('HTTP_AUTHORIZATION'):
+        if 'HTTP_AUTHORIZATION' in request.META:
             method, auth = request.META['HTTP_AUTHORIZATION'].split(' ', 1)
             if method.lower() == 'basic':
                 auth = auth.strip.decode('base64')
