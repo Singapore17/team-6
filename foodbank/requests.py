@@ -58,6 +58,7 @@ def import_requests(req, **params):
 
 
 @csrf_exempt
+@basic_auth
 def post_request(req, **param):
     r = models.Request()
     data = json.loads(req.body.decode('utf-8'))['result']['parameters']
