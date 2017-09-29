@@ -15,7 +15,7 @@ def basic_auth(func):
         if 'HTTP_AUTHORIZATION' in request.META:
             method, auth = request.META['HTTP_AUTHORIZATION'].split(' ', 1)
             if method.lower() == 'basic':
-                auth = auth.strip.decode('base64')
+                auth = auth.strip().decode('base64')
                 username, password = auth.split(':')
                 if username == AUTH.username and password == AUTH.password:
                     return func(request, *args, **kwargs)
