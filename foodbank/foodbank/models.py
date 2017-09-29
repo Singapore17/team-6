@@ -22,7 +22,6 @@ class Request(models.Model):
     category = models.ForeignKey(Category)
     quantity = models.IntegerField()
     time = models.DateField(default=datetime.date.today)
-    fulfilled = models.BooleanField()
 
 class Fulfillment(models.Model):
     request = models.ForeignKey(Request)

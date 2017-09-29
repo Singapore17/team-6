@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from . import requests
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^request', requests.post_request),
+    url(r'^beneficiary/requests', requests.show_beneficiary_requests)
 ]
