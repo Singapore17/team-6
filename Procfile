@@ -1,1 +1,1 @@
-web: gunicorn foodbank.foodbank.wsgi --log-file -
+web: gunicorn foodbank.wsgi --log-file -
